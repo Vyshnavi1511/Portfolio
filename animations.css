@@ -1,0 +1,258 @@
+/* ============================================
+   VYSHNAVI VINOD PORTFOLIO — animations.css
+   Rich, layered animation library
+   ============================================ */
+
+/* ---- HERO TEXT ENTRANCE ---- */
+.hero-eyebrow {
+  opacity: 0;
+  animation: slideInLeft 0.8s cubic-bezier(0.23, 1, 0.32, 1) 0.3s forwards;
+}
+.hero-name .name-line:nth-child(1) {
+  opacity: 0;
+  animation: revealUp 0.9s cubic-bezier(0.23, 1, 0.32, 1) 0.5s forwards;
+}
+.hero-name .name-line:nth-child(2) {
+  opacity: 0;
+  animation: revealUp 0.9s cubic-bezier(0.23, 1, 0.32, 1) 0.7s forwards;
+}
+.hero-tagline {
+  opacity: 0;
+  animation: fadeUp 0.8s ease 0.9s forwards;
+}
+.typewriter-wrap {
+  opacity: 0;
+  animation: fadeUp 0.8s ease 1.1s forwards;
+}
+.hero-cta {
+  opacity: 0;
+  animation: fadeUp 0.8s ease 1.3s forwards;
+}
+.hero-visual {
+  opacity: 0;
+  animation: scaleIn 1s cubic-bezier(0.23, 1, 0.32, 1) 0.5s forwards;
+}
+.scroll-hint {
+  opacity: 0;
+  animation: fadeIn 1s ease 2s forwards;
+}
+
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-30px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes revealUp {
+  from { opacity: 0; transform: translateY(50px) skewY(3deg); }
+  to   { opacity: 1; transform: translateY(0) skewY(0deg); }
+}
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.88) translateY(20px); }
+  to   { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+/* ---- FLOATING BADGES ---- */
+.badge1 { animation: floatBadge 3.2s ease-in-out infinite 0s; }
+.badge2 { animation: floatBadge 3.2s ease-in-out infinite 1.1s; }
+.badge3 { animation: floatBadge 3.2s ease-in-out infinite 2.2s; }
+
+@keyframes floatBadge {
+  0%, 100% { transform: translateY(0px) rotate(-1deg); }
+  50%       { transform: translateY(-10px) rotate(1deg); }
+}
+
+/* ---- SPARKLE DECORATIONS ---- */
+.s1 { animation: sparkleFloat 2.5s ease-in-out infinite 0s; }
+.s2 { animation: sparkleFloat 2.5s ease-in-out infinite 0.6s; }
+.s3 { animation: sparkleFloat 2.5s ease-in-out infinite 1.2s; }
+.s4 { animation: sparkleFloat 2.5s ease-in-out infinite 1.8s; }
+
+@keyframes sparkleFloat {
+  0%, 100% { opacity: 0.4; transform: scale(1) rotate(0deg); }
+  33%       { opacity: 1;   transform: scale(1.4) rotate(20deg); }
+  66%       { opacity: 0.6; transform: scale(0.8) rotate(-10deg); }
+}
+
+/* ---- SCROLL HINT ---- */
+.scroll-line {
+  animation: scrollPulse 1.6s ease-in-out infinite;
+}
+@keyframes scrollPulse {
+  0%, 100% { transform: scaleY(1); opacity: 1; }
+  50%       { transform: scaleY(0.5); opacity: 0.3; }
+}
+
+/* ---- ORB DRIFTING ---- */
+.orb1 { animation: orbDrift1 18s ease-in-out infinite; }
+.orb2 { animation: orbDrift2 22s ease-in-out infinite; }
+.orb3 { animation: orbDrift3 15s ease-in-out infinite; }
+
+@keyframes orbDrift1 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33%       { transform: translate(-40px, 30px) scale(1.1); }
+  66%       { transform: translate(20px, -20px) scale(0.95); }
+}
+@keyframes orbDrift2 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50%       { transform: translate(60px, -40px) scale(1.15); }
+}
+@keyframes orbDrift3 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  40%       { transform: translate(-30px, 50px) scale(1.08); }
+}
+
+/* ---- PETAL FALL ---- */
+@keyframes floatPetal {
+  0%   { transform: translateY(-20px) rotate(0deg); opacity: 0; }
+  5%   { opacity: 0.5; }
+  90%  { opacity: 0.25; }
+  100% { transform: translateY(110vh) rotate(540deg); opacity: 0; }
+}
+
+/* ---- NAVBAR LOGO PULSE ---- */
+.logo-dot {
+  display: inline-block;
+  animation: logoPulse 2s ease-in-out infinite;
+}
+@keyframes logoPulse {
+  0%, 100% { transform: scale(1); opacity: 0.9; }
+  50%       { transform: scale(1.4); opacity: 1; }
+}
+
+/* ---- TILT CARD (applied via JS, CSS transitions here) ---- */
+.project-card {
+  transition: transform 0.15s ease, box-shadow 0.45s cubic-bezier(0.23, 1, 0.32, 1), background 0.45s, border-color 0.45s;
+}
+
+/* ---- SHIMMER ON SECTION TITLE ---- */
+.section-title em {
+  background: linear-gradient(90deg, var(--mauve), var(--rose), var(--lilac), var(--mauve));
+  background-size: 300% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmerText 4s linear infinite;
+}
+@keyframes shimmerText {
+  from { background-position: 0% center; }
+  to   { background-position: 300% center; }
+}
+
+/* For dark sections, reset the em color */
+.section-title.light em {
+  background: linear-gradient(90deg, var(--rose), var(--blush), var(--lilac), var(--rose));
+  background-size: 300% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmerText 4s linear infinite;
+}
+
+/* ---- CONTACT BG TEXT FLOAT ---- */
+.contact-bg-text {
+  animation: bgTextDrift 12s ease-in-out infinite;
+}
+@keyframes bgTextDrift {
+  0%, 100% { transform: translate(-50%, -50%) scale(1); }
+  50%       { transform: translate(-50%, -52%) scale(1.03); }
+}
+
+/* ---- BUTTON RIPPLE ---- */
+.btn-primary:active::after {
+  content: '';
+  position: absolute; inset: 0; border-radius: 50px;
+  background: rgba(255,255,255,0.2);
+  animation: ripple 0.5s ease forwards;
+}
+@keyframes ripple {
+  from { transform: scale(0); opacity: 1; }
+  to   { transform: scale(2); opacity: 0; }
+}
+
+/* ---- STAT COUNTER POP ---- */
+.stat-num {
+  transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.stat-box:hover .stat-num {
+  transform: scale(1.15);
+}
+
+/* ---- CERT CARD ENTRANCE ---- */
+.cert-card.visible .cert-bar {
+  animation: certBarGrow 0.8s ease forwards 0.3s;
+}
+@keyframes certBarGrow {
+  from { width: 0; }
+  to   { width: 60%; }
+}
+
+/* ---- TIMELINE ITEM ---- */
+.timeline-dot {
+  animation: dotPulse 2.5s ease-in-out infinite;
+}
+@keyframes dotPulse {
+  0%, 100% { box-shadow: 0 0 0 5px rgba(232, 160, 160, 0.15); }
+  50%       { box-shadow: 0 0 0 10px rgba(232, 160, 160, 0.05); }
+}
+
+/* ---- PAGE LOAD PROGRESS ---- */
+.page-loader {
+  position: fixed; inset: 0; z-index: 9999;
+  background: var(--petal);
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center; gap: 1.5rem;
+}
+.loader-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem; font-style: italic; color: var(--wine);
+  opacity: 0; animation: fadeIn 0.5s ease 0.2s forwards;
+}
+.loader-bar-wrap {
+  width: 200px; height: 2px; background: rgba(232,160,160,0.3); border-radius: 2px;
+  overflow: hidden;
+}
+.loader-bar {
+  height: 100%; width: 0%;
+  background: linear-gradient(90deg, var(--rose), var(--lilac));
+  border-radius: 2px;
+  animation: loaderProgress 1.5s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+}
+@keyframes loaderProgress {
+  to { width: 100%; }
+}
+.loader-petals { font-size: 1.8rem; animation: spin 3s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ---- MOBILE MENU LINK STAGGER ---- */
+.mobile-menu.open li {
+  animation: mobLinkIn 0.5s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+  opacity: 0;
+}
+.mobile-menu.open li:nth-child(1) { animation-delay: 0.1s; }
+.mobile-menu.open li:nth-child(2) { animation-delay: 0.18s; }
+.mobile-menu.open li:nth-child(3) { animation-delay: 0.26s; }
+.mobile-menu.open li:nth-child(4) { animation-delay: 0.34s; }
+.mobile-menu.open li:nth-child(5) { animation-delay: 0.42s; }
+@keyframes mobLinkIn {
+  from { opacity: 0; transform: translateX(30px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+/* ---- NOISE TEXTURE GRAIN ---- */
+.noise-overlay {
+  animation: grainShift 0.08s steps(1) infinite;
+}
+@keyframes grainShift {
+  0%   { transform: translate(0, 0); }
+  25%  { transform: translate(-1px, 1px); }
+  50%  { transform: translate(1px, -1px); }
+  75%  { transform: translate(-1px, -1px); }
+  100% { transform: translate(1px, 1px); }
+}

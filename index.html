@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vyshnavi Vinod — AI Engineer</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="animations.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,300;0,600;1,300;1,600&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- Custom cursors -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="follower"></div>
+
+  <!-- Canvas for particle/sparkle effect -->
+  <canvas id="sparkleCanvas"></canvas>
+
+  <!-- Floating petals background -->
+  <div class="petal-bg" id="petalBg"></div>
+
+  <!-- Noise texture overlay -->
+  <div class="noise-overlay"></div>
+
+  <!-- ===== NAV ===== -->
+  <nav id="navbar">
+    <div class="nav-logo">
+      <span class="logo-v">V</span><span class="logo-dot">✦</span><span class="logo-v">V</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#about" class="nav-link">About</a></li>
+      <li><a href="#skills" class="nav-link">Skills</a></li>
+      <li><a href="#projects" class="nav-link">Projects</a></li>
+      <li><a href="#certifications" class="nav-link">Certs</a></li>
+      <li><a href="#contact" class="nav-link">Contact</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- Mobile menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="#about" class="mob-link">About</a></li>
+      <li><a href="#skills" class="mob-link">Skills</a></li>
+      <li><a href="#projects" class="mob-link">Projects</a></li>
+      <li><a href="#certifications" class="mob-link">Certs</a></li>
+      <li><a href="#contact" class="mob-link">Contact</a></li>
+    </ul>
+  </div>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="home">
+    <div class="hero-bg-orbs">
+      <div class="orb orb1"></div>
+      <div class="orb orb2"></div>
+      <div class="orb orb3"></div>
+    </div>
+
+    <div class="hero-text">
+      <div class="hero-eyebrow">
+        <span class="eyebrow-line"></span>
+        AI Engineer &amp; Innovator
+      </div>
+      <h1 class="hero-name">
+        <span class="name-line">Vyshnavi</span>
+        <em class="name-line">Vinod</em>
+      </h1>
+      <p class="hero-tagline">
+        Crafting intelligent systems<br/>with elegance &amp; precision
+      </p>
+      <div class="typewriter-wrap">
+        <span class="tw-prefix">I build </span>
+        <span class="typewriter" id="typewriter"></span>
+        <span class="tw-cursor">|</span>
+      </div>
+      <div class="hero-cta">
+        <a href="#projects" class="btn-primary">
+          <span>View My Work</span>
+          <svg viewBox="0 0 24 24" width="16" height="16"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+        </a>
+        <a href="#contact" class="btn-secondary">Let's Connect</a>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="hero-image-frame">
+        <div class="image-bg-ring ring1"></div>
+        <div class="image-bg-ring ring2"></div>
+        <div class="image-bg-shape"></div>
+        <div class="profile-img-wrapper" id="profileWrapper">
+          <img src="Vyshnavi Image.jpeg" alt="Vyshnavi Vinod" />
+        </div>
+        <div class="floating-badge badge1">
+          <div class="badge-dot"></div>AI &amp; ML
+        </div>
+        <div class="floating-badge badge2">
+          <div class="badge-dot d2"></div>Deep Learning
+        </div>
+        <div class="floating-badge badge3">
+          <div class="badge-dot d3"></div>CV Engineer
+        </div>
+        <!-- sparkle dots around frame -->
+        <div class="frame-sparkle s1">✦</div>
+        <div class="frame-sparkle s2">✦</div>
+        <div class="frame-sparkle s3">✦</div>
+        <div class="frame-sparkle s4">✦</div>
+      </div>
+    </div>
+
+    <div class="scroll-hint">
+      <div class="scroll-line"></div>
+      <span>Scroll</span>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT ===== -->
+  <section class="about" id="about">
+    <div class="about-inner container">
+      <div class="about-visual reveal">
+        <div class="about-card glass-card">
+          <div class="card-accent"></div>
+          <div class="about-card-title">"A mind for machines,<br/>a heart for design."</div>
+          <p>Where analytical thinking meets creative engineering — I build AI that's not just powerful, but purposeful.</p>
+          <div class="about-stats">
+            <div class="stat-box">
+              <div class="stat-num counter" data-target="3">0</div>
+              <div class="stat-label">Projects</div>
+            </div>
+            <div class="stat-box">
+              <div class="stat-num counter" data-target="4">0</div>
+              <div class="stat-label">Certifications</div>
+            </div>
+            <div class="stat-box">
+              <div class="stat-num counter" data-target="5">0</div>
+              <div class="stat-label">Frameworks</div>
+            </div>
+            <div class="stat-box">
+              <div class="stat-num">2022</div>
+              <div class="stat-label">Journey Began</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="about-content reveal delay2">
+        <div class="section-label">Who I Am</div>
+        <h2 class="section-title">Passionate <em>Problem Solver</em></h2>
+        <p class="section-desc">I'm a B.Tech student at Christ University, Bangalore, specializing in Artificial Intelligence and Machine Learning. My journey is driven by a love for crafting solutions that are not just technically sound — but genuinely impactful.</p>
+        <p class="section-desc">From building assistive technologies for the visually impaired to generative AI models for creative expression, I approach each project with both scientific rigor and imaginative thinking. I thrive at the intersection of code, creativity, and real-world utility.</p>
+        <div class="about-pills">
+          <span class="pill">🎓 Christ University, Bangalore</span>
+          <span class="pill">📍 Bangalore, Karnataka</span>
+          <span class="pill">🌟 AI &amp; ML Specialization</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SKILLS ===== -->
+  <section class="skills" id="skills">
+    <div class="skills-inner container">
+      <div class="skills-header reveal">
+        <div class="section-label center">My Expertise</div>
+        <h2 class="section-title center">Technical <em>Arsenal</em></h2>
+      </div>
+      <div class="skills-grid">
+        <div class="skill-card reveal delay1">
+          <div class="skill-icon-wrap">🐍</div>
+          <h3>Languages</h3>
+          <div class="skill-tags">
+            <span class="tag">Python</span><span class="tag">JavaScript</span>
+            <span class="tag">C Programming</span><span class="tag">HTML</span>
+            <span class="tag">R-Studio</span>
+          </div>
+          <div class="card-glow"></div>
+        </div>
+        <div class="skill-card reveal delay2">
+          <div class="skill-icon-wrap">🧠</div>
+          <h3>Frameworks &amp; Libraries</h3>
+          <div class="skill-tags">
+            <span class="tag">TensorFlow</span><span class="tag">PyTorch</span>
+            <span class="tag">Keras</span><span class="tag">Scikit-learn</span>
+            <span class="tag">OpenCV</span>
+          </div>
+          <div class="card-glow"></div>
+        </div>
+        <div class="skill-card reveal delay3">
+          <div class="skill-icon-wrap">🔧</div>
+          <h3>Tools &amp; Platforms</h3>
+          <div class="skill-tags">
+            <span class="tag">Jupyter Notebook</span><span class="tag">Anaconda</span>
+            <span class="tag">MATLAB</span><span class="tag">R Studio</span>
+            <span class="tag">Dev C++</span>
+          </div>
+          <div class="card-glow"></div>
+        </div>
+        <div class="skill-card reveal delay1">
+          <div class="skill-icon-wrap">🤖</div>
+          <h3>ML Techniques</h3>
+          <div class="skill-tags">
+            <span class="tag">Supervised Learning</span><span class="tag">Unsupervised</span>
+            <span class="tag">Reinforcement Learning</span><span class="tag">Deep Learning</span>
+          </div>
+          <div class="card-glow"></div>
+        </div>
+        <div class="skill-card reveal delay2">
+          <div class="skill-icon-wrap">💬</div>
+          <h3>NLP &amp; Vision</h3>
+          <div class="skill-tags">
+            <span class="tag">NLP</span><span class="tag">Image Classification</span>
+            <span class="tag">Object Detection</span><span class="tag">Segmentation</span>
+          </div>
+          <div class="card-glow"></div>
+        </div>
+        <div class="skill-card reveal delay3">
+          <div class="skill-icon-wrap">🌟</div>
+          <h3>Soft Skills</h3>
+          <div class="skill-tags">
+            <span class="tag">Communication</span><span class="tag">Adaptability</span>
+            <span class="tag">Problem Solving</span><span class="tag">Teamwork</span>
+          </div>
+          <div class="card-glow"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PROJECTS ===== -->
+  <section class="projects" id="projects">
+    <div class="projects-inner container">
+      <div class="reveal">
+        <div class="section-label">Featured Work</div>
+        <h2 class="section-title light">Projects that <em>Matter</em></h2>
+      </div>
+      <div class="projects-grid">
+
+        <!-- 01 -->
+        <div class="project-card reveal delay1" data-tilt>
+          <div class="project-num">01</div>
+          <div class="project-emoji-big">⚡</div>
+          <h3>Piezoelectric Generator</h3>
+          <p>An energy harvesting device converting mechanical energy — vibrations, pressure, movement — into sustainable electrical energy. Prototypes tested across automotive, civil, and wearable tech applications with full data analysis.</p>
+          <div class="project-chips">
+            <span class="chip">Energy Harvesting</span>
+            <span class="chip">Prototype Design</span>
+            <span class="chip">Data Analysis</span>
+            <span class="chip">Sustainability</span>
+          </div>
+          <div class="project-links">
+            <a href="#" class="proj-link live" target="_blank">↗ Live Demo</a>
+            <a href="#" class="proj-link github" target="_blank">⌥ GitHub</a>
+          </div>
+          <div class="project-card-shine"></div>
+        </div>
+
+        <!-- 02 -->
+        <div class="project-card reveal delay2" data-tilt>
+          <div class="project-num">02</div>
+          <div class="project-emoji-big">👁️</div>
+          <h3>Third-Eye for Blind</h3>
+          <p>Assistive AI empowering visually impaired individuals with real-time object detection, auditory &amp; tactile feedback, and seamless wearable integration. Built for independence, designed with empathy.</p>
+          <div class="project-chips">
+            <span class="chip">Computer Vision</span>
+            <span class="chip">Object Detection</span>
+            <span class="chip">Wearable Tech</span>
+            <span class="chip">Assistive AI</span>
+          </div>
+          <div class="project-links">
+            <a href="#" class="proj-link live" target="_blank">↗ Live Demo</a>
+            <a href="#" class="proj-link github" target="_blank">⌥ GitHub</a>
+          </div>
+          <div class="project-card-shine"></div>
+        </div>
+
+        <!-- 03 -->
+        <div class="project-card reveal delay3" data-tilt>
+          <div class="project-num">03</div>
+          <div class="project-emoji-big">😊</div>
+          <h3>Creating Emoji using ML</h3>
+          <p>Generative AI model (GANs / VAEs) trained to design personalized emoji based on user emotions. Promotes diversity and inclusivity in digital expression through an intuitive creative interface.</p>
+          <div class="project-chips">
+            <span class="chip">GANs</span>
+            <span class="chip">VAEs</span>
+            <span class="chip">Generative AI</span>
+            <span class="chip">UX Design</span>
+          </div>
+          <div class="project-links">
+            <a href="#" class="proj-link live" target="_blank">↗ Live Demo</a>
+            <a href="#" class="proj-link github" target="_blank">⌥ GitHub</a>
+          </div>
+          <div class="project-card-shine"></div>
+        </div>
+
+        <!-- 04 -->
+        <div class="project-card reveal delay1" data-tilt>
+          <div class="project-num">04</div>
+          <div class="project-emoji-big">📋</div>
+          <h3>Task Management SaaS</h3>
+          <p>Collaborative project management tool with real-time updates, drag-and-drop, team roles, and analytics. Used by 500+ teams to streamline workflows and boost productivity.</p>
+          <div class="project-chips">
+            <span class="chip">React</span>
+            <span class="chip">Socket.io</span>
+            <span class="chip">PostgreSQL</span>
+            <span class="chip">Docker</span>
+          </div>
+          <div class="project-links">
+            <a href="https://html-preview.github.io/?url=https://github.com/Vyshnavi1511/Taskflow/blob/main/index.html" class="proj-link live" target="_blank">↗ Live Demo</a>
+            <a href="https://github.com/Vyshnavi1511/Taskflow" class="proj-link github" target="_blank">⌥ GitHub</a>
+          </div>
+          <div class="project-card-shine"></div>
+        </div>
+
+        <!-- 05 -->
+        <div class="project-card reveal delay2" data-tilt>
+          <div class="project-num">05</div>
+          <div class="project-emoji-big">🗂️</div>
+          <h3>Portfolio Builder</h3>
+          <p>A no-code portfolio generator for developers and designers. Customisable templates, custom domains, and one-click deploy to Vercel — making beautiful portfolios effortless.</p>
+          <div class="project-chips">
+            <span class="chip">Next.js</span>
+            <span class="chip">Prisma</span>
+            <span class="chip">Vercel API</span>
+            <span class="chip">Framer</span>
+          </div>
+          <div class="project-links">
+            <a href="https://html-preview.github.io/?url=https://github.com/Vyshnavi1511/Portfolio-Builder/blob/1302a5ad60c5ef0a870ecde598d77d167059f115/index.html" class="proj-link live" target="_blank">↗ Live Demo</a>
+            <a href="https://github.com/Vyshnavi1511/Portfolio-Builder" class="proj-link github" target="_blank">⌥ GitHub</a>
+          </div>
+          <div class="project-card-shine"></div>
+        </div>
+
+        <!-- 06 -->
+        <div class="project-card reveal delay3" data-tilt>
+          <div class="project-num">06</div>
+          <div class="project-emoji-big">💰</div>
+          <h3>Finance Tracker App</h3>
+          <p>Cross-platform mobile app for personal finance with bank sync, categorisation, monthly budgets, and spending insights — helping users take control of their financial life.</p>
+          <div class="project-chips">
+            <span class="chip">React Native</span>
+            <span class="chip">Expo</span>
+            <span class="chip">Firebase</span>
+            <span class="chip">Plaid</span>
+          </div>
+          <div class="project-links">
+            <a href="https://html-preview.github.io/?url=https://github.com/Vyshnavi1511/Finance-Tracker-App/blob/main/index.html" class="proj-link live" target="_blank">↗ Live Demo</a>
+            <a href="https://github.com/Vyshnavi1511/Finance-Tracker-App" class="proj-link github" target="_blank">⌥ GitHub</a>
+          </div>
+          <div class="project-card-shine"></div>
+        </div>
+
+        <!-- 07 -->
+        <div class="project-card reveal delay1" data-tilt>
+          <div class="project-num">07</div>
+          <div class="project-emoji-big">✍️</div>
+          <h3>AI Content Generator</h3>
+          <p>Intelligent content creation platform powered by language models. Generates SEO-optimised blog posts, ads, and social content in seconds — scaling creativity with AI.</p>
+          <div class="project-chips">
+            <span class="chip">Python</span>
+            <span class="chip">FastAPI</span>
+            <span class="chip">OpenAI</span>
+            <span class="chip">React</span>
+          </div>
+          <div class="project-links">
+            <a href="https://html-preview.github.io/?url=https://github.com/Vyshnavi1511/AI-Content-Generator/blob/main/index.html" class="proj-link live" target="_blank">↗ Live Demo</a>
+            <a href="https://github.com/Vyshnavi1511/AI-Content-Generator" class="proj-link github" target="_blank">⌥ GitHub</a>
+          </div>
+          <div class="project-card-shine"></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CERTIFICATIONS ===== -->
+  <section class="certifications" id="certifications">
+    <div class="certs-inner container">
+      <div class="certs-header reveal">
+        <div class="section-label">Credentials</div>
+        <h2 class="section-title">Certifications &amp; <em>Training</em></h2>
+      </div>
+      <div class="certs-grid">
+        <div class="cert-card reveal delay1">
+          <div class="cert-icon-wrap">🔐</div>
+          <h4>Cyber Security</h4>
+          <p>Certified by Cisco</p>
+          <div class="cert-bar"></div>
+        </div>
+        <div class="cert-card reveal delay2">
+          <div class="cert-icon-wrap">📊</div>
+          <h4>MATLAB Training</h4>
+          <p>MATLAB Training Program</p>
+          <div class="cert-bar"></div>
+        </div>
+        <div class="cert-card reveal delay3">
+          <div class="cert-icon-wrap">📡</div>
+          <h4>Signal Processing</h4>
+          <p>MATLAB — Signal Processing</p>
+          <div class="cert-bar"></div>
+        </div>
+        <div class="cert-card reveal delay4">
+          <div class="cert-icon-wrap">💻</div>
+          <h4>Web Development</h4>
+          <p>Intern — Cognifyz Technologies</p>
+          <div class="cert-bar"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== EDUCATION ===== -->
+  <section class="education" id="education">
+    <div class="edu-inner container">
+      <div class="edu-header reveal">
+        <div class="section-label center">Academic Path</div>
+        <h2 class="section-title center">Education &amp; <em>Journey</em></h2>
+      </div>
+      <div class="timeline">
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-year">2022 — Present</div>
+            <h3>B.Tech in AI &amp; Machine Learning</h3>
+            <p>Christ University, Bangalore, Karnataka</p>
+          </div>
+        </div>
+        <div class="timeline-item reveal delay2">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-year">2019 — 2021</div>
+            <h3>Higher Secondary (Class XII)</h3>
+            <p>AL Manar HSS, Randathani, Malappuram, Kerala</p>
+          </div>
+        </div>
+        <div class="timeline-item reveal delay3">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-year">2019</div>
+            <h3>SSLC (Class X) — CBSE</h3>
+            <p>Jai Rani SABS Public School, Balussery, Kozhikode, Kerala</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section class="contact" id="contact">
+    <div class="contact-inner container">
+      <div class="section-label center reveal">Get in Touch</div>
+      <h2 class="section-title light center reveal">Let's Build <em>Together</em></h2>
+      <p class="contact-tagline reveal">Open to internships, collaborations &amp; exciting AI opportunities.</p>
+      <div class="contact-links reveal">
+        <a href="mailto:vyshnavijichu1511@gmail.com" class="contact-link">
+          <span class="cl-icon">📧</span>
+          <span>vyshnavijichu1511@gmail.com</span>
+        </a>
+        <a href="tel:+918590470195" class="contact-link">
+          <span class="cl-icon">📞</span>
+          <span>+91 85904 70195</span>
+        </a>
+        <a href="#" class="contact-link">
+          <span class="cl-icon">💼</span>
+          <span>LinkedIn Profile</span>
+        </a>
+      </div>
+    </div>
+    <div class="contact-bg-text">HELLO</div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <p>Crafted with <span class="heart">♡</span> for Vyshnavi Vinod · AI Engineer · 2025</p>
+  </footer>
+
+  <script src="main.js"></script>
+  <script src="animations.js"></script>
+</body>
+</html>
